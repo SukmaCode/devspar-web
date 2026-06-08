@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "UncialAntiqua";
+  src: url("./assets/fonts/Uncial_Antiqua/UncialAntiqua-Regular.ttf")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --color-bg-main: #000f2d;
+  --color-bg-secondary: #1e1e1e;
+  --color-text-main: #ffffff;
+  --color-text-secondary: oklch(85.2% 0.199 91.936);
+  --font-uncialantiqua: UncialAntiqua, "sans-serif";
+  --animate-snakeMove: snakeMove 4s linear infinite;
+}
+
+@keyframes snakeMove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

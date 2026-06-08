@@ -1,0 +1,50 @@
+===================================================
+      ALUR WEBSITE & NAVIGASI APLIKASI DEVSPAR      
+===================================================
+
+1. HALAMAN AWAL (Main Menu / Landing Page) - Route: `/`
+   Halaman pertama yang akan terbuka saat aplikasi dijalankan. 
+   Terdapat 3 tombol utama:
+   ├── [Play Button]    => Memainkan suara (efek), lalu masuk ke Dashboard (Home) - Route: `/home`
+   ├── [Setting Button] => Masuk ke halaman Pengaturan Aplikasi - Route: `/settingpage`
+   └── [Credit Button]  => Masuk ke halaman Credit/Tentang - Route: `/creditpage`
+
+---------------------------------------------------
+
+2. SISTEM DASHBOARD UTAMA (Mempunyai Sidebar & Topbar)
+   Setelah menekan "Play", pengguna memasuki area utama. Terdapat Sidebar navigasi di sebelah kiri yang dapat digunakan untuk berpindah antar halaman berikut:
+
+   A. HOME (Route: `/home`)
+      Tampilan beranda yang berisikan:
+      - Topbar (Pojok Kanan Atas: info Diamond & Heart)
+      - Announcement (Papan pengumuman info game)
+      - ContinueLevel (Tombol pintas untuk melanjutkan level terakhir dimainkan)
+      - QuestCard (Daftar quest/misi harian)
+
+   B. COURSE (Route: `/course`)
+      Tempat pengguna memilih materi pelajaran:
+      - Topbar
+      - SelectCourse (Pemilihan materi coding yang ingin diselesaikan)
+
+   C. BATTLE (Route: `/battle`)
+      Tempat pengguna melakukan PvP/Battle:
+      - SelectMode (Memilih mode permainan/pertarungan)
+      - StartBattleButton (Tombol "Mulai Bertarung")
+
+   D. PROFILE (Route: `/profile`)
+      Halaman pengelolaan data dan statistik akun:
+      - Topbar
+      - Profile Header (Avatar, Username yang bisa diedit, Level/Rank, dan Progress XP)
+      - Game Statistics (Total Win, Total Fail, Win Rate, Play Time)
+      - Activity & History (Recent Matches, Last played mode)
+      - Settings & Preferences (Ganti Dark/Light Theme, Toggle Sound, Toggle Music, Bahasa)
+      - Avatar Picker (Pop-up modal saat klik foto profile untuk ganti avatar)
+
+   E. LOGOUT (Di dalam Sidebar)
+      - Tombol yang akan mengembalikan pengguna kembali ke HALAMAN AWAL (`/`).
+
+---------------------------------------------------
+
+3. KOMPONEN GLOBAL & STATE (Berjalan di Latar Belakang)
+   - Topbar: Berisi informasi statik/dinamis kurensi in-game (Diamond & Heart).
+   - Context API (Settings & Stats Context): Mengatur state global (Tema, Statistik) dan menyimpannya menggunakan localStorage (mock AsyncStorage) sehingga status player tetap tersimpan meskipun web di-refresh.
