@@ -27,7 +27,7 @@ export default function Sidebar() {
               `font-uncialantiqua py-2 px-4 mx-4 my-2 rounded-sm transition
        ${
          isActive
-           ? "shadow-[0_0_20px_rgba(255,255,255,0.7)] bg-[rgba(255,255,255)] text-black"
+           ? "border-2 rounded-lg border-[rgba(255,255,255)] bg-white/20 text-white"
            : "text-white hover:bg-gray-600"
        }`
           }

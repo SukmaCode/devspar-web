@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getAllAvatar } from "../../services/avatar.service";
 
 export default function AvatarPickerModal({ isOpen, onClose, currentAvatarId, onSelectAvatar }) {
   if (!isOpen) return null;
 
-  const avatars = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const [avatars, setAvatars] = useState([]);
+
+  useEffect(() => {
+    const fetchAvatars = async () => {
+      try {
+        const response = await getAllAvatar();
+        setAvatars(response || []);
+      } catch (error) {
+        console.error("Error fetching avatars:", error);
+      }
+    };
+    fetchAvatars();
+  }, []);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-300">
@@ -11,19 +24,19 @@ export default function AvatarPickerModal({ isOpen, onClose, currentAvatarId, on
         <h2 className="text-2xl font-uncialantiqua font-bold mb-4 text-center">Choose Your Avatar</h2>
         
         <div className="grid grid-cols-3 gap-4 mb-6">
-          {avatars.map((id) => (
+          {avatars.map((avatar) => (
             <div 
-              key={id} 
-              onClick={() => onSelectAvatar(id)}
+              key={avatar.id} 
+              onClick={() => onSelectAvatar(avatar.id)}
               className={`cursor-pointer rounded-xl overflow-hidden border-4 transition-all duration-200 ${
-                currentAvatarId === id 
+                currentAvatarId === avatar.id 
                   ? "border-green-400 scale-105"
                   : "border-transparent hover:scale-105 hover:shadow-lg"
               }`}
             >
               <img 
-                src={`https://api.dicebear.com/7.x/bottts/svg?seed=${id}&backgroundColor=16213e`} 
-                alt={`Avatar ${id}`} 
+                src={avatar.image_url}
+                // alt={`Avatar ${avatar.id}`} 
                 className="w-full h-auto bg-[#16213e]"
               />
             </div>

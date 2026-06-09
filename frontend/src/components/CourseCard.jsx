@@ -4,7 +4,7 @@ const CourseCard = ({ classData }) => {
   const navigate = useNavigate();
 
   const onPress = () => {
-    navigate(`/level/${classData.id}`);
+    navigate(`/course/${classData.id}`);
   };
 
   return (

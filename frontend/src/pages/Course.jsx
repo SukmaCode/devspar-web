@@ -1,5 +1,5 @@
 import React from "react";
-import SelectCourse from "./learnpages/SelectCourse";
+import SelectCourse from "./courses/SelectCourse";
 import Topbar from "../components/TopBar";
 import Layout from "../layouts/Layout";
 

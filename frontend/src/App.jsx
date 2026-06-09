@@ -7,7 +7,8 @@ import Home from "./pages/Home";
 import Battle from "./pages/Battle";
 import Profile from "./pages/Profile";
 import Course from "./pages/Course";
-import LevelPage from "./pages/learnpages/LevelPage"
+import LevelPage from "./pages/courses/LevelPage"
+import QuestionPage from "./pages/courses/QuestionPage"
 
 function App() {
   return (
@@ -23,9 +24,12 @@ function App() {
         <Route path="/course" element={<Course />} />
         <Route path="/battle" element={<Battle />} />
         <Route path="/profile" element={<Profile />} />
-        
+
         {/*  */}
-        <Route path="/level/:courseId" element={<LevelPage />} />
+        <Route path="/course/:courseId" element={<LevelPage />} />
+
+        {/*  */}
+        <Route path="/course/:courseId/level/:levelId" element={<QuestionPage />} />
       </Routes>
     </BrowserRouter>
   );
