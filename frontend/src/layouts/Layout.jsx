@@ -1,11 +1,12 @@
 import Sidebar from "../components/Sidebar";
-import Topbar from "../components/TopBar";
+import TabBar from "../components/TabBar";
 
 export default function Layout({ children }) {
   return (
-    <div className="relative w-full h-screen bg-bg-main flex flex-row overflow-hidden">
+    <div className="relative w-full h-screen bg-main flex flex-row overflow-hidden">
       <Sidebar />
-      <main className="relative flex-1 overflow-y-auto p-4">
+      <TabBar />
+      <main className="relative flex-1 pb-20 sm:pb-0 overflow-y-auto p-4">
         {children}
       </main>
     </div>

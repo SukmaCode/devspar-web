@@ -2,18 +2,52 @@
 
 @font-face {
   font-family: "UncialAntiqua";
-  src: url("./assets/fonts/Uncial_Antiqua/UncialAntiqua-Regular.ttf")
-    format("woff2");
+  src: url("./assets/fonts/Uncial_Antiqua/UncialAntiqua-Regular.ttf") format("woff2");
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter-Regular.ttf") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter Bold";
+  src: url("./assets/fonts/Inter-Bold.ttf") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Regular.ttf") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins Bold";
+  src: url("./assets/fonts/Poppins-Bold.ttf") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins SemiBold";
+  src: url("./assets/fonts/Poppins-SemiBold.ttf") format("woff2");
+  font-weight: 600;
   font-style: normal;
 }
 
 @theme {
-  --color-bg-main: #000f2d;
-  --color-bg-secondary: #1e1e1e;
+  --color-main: #000f2d;
+  --color-secondary: #1e1e1e;
   --color-text-main: #ffffff;
   --color-text-secondary: oklch(85.2% 0.199 91.936);
   --font-uncialantiqua: UncialAntiqua, "sans-serif";
+  --font-inter: Inter, "sans-serif";
+  --font-interbold: "Inter Bold", "sans-serif";
+  --font-poppins: Poppins, "sans-serif";
+  --font-poppinsbold: "Poppins Bold", "sans-serif";
+  --font-poppinssemibold: "Poppins SemiBold", "sans-serif";
   --animate-snakeMove: snakeMove 4s linear infinite;
 }
 
@@ -24,4 +58,14 @@
   100% {
     transform: translateX(100%);
   }
+}
+
+.floating-animation {
+  animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
 }

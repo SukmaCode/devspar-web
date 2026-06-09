@@ -13,12 +13,12 @@ export default function Announcement() {
         <h1 className="text-text-main text-2xl font-uncialantiqua">
           {announcement.title}
         </h1>
-        <p className="text-text-secondary text-sm font-uncialantiqua">
+        <p className="text-text-secondary text-sm font-poppinssemibold">
           {announcement.text}
         </p>
       </div>
       <div>
-        <button className="text-yellow-400 font-uncialantiqua underline cursor-pointer">
+        <button className="text-yellow-400 font-poppinsbold text-base tracking-wide underline cursor-pointer">
           Learn More!
         </button>
       </div>

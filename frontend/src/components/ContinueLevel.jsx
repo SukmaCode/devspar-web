@@ -12,13 +12,13 @@ export default function ContinueLevel() {
         className="w-full h-[250px] object-cover object-center text-white"
       />
       <div className="p-4 space-y-3">
-        <p className="text-yellow-400 text-sm font-uncialantiqua">
+        <p className="text-yellow-400 text-base font-uncialantiqua">
           Continue your adventure!
         </p>
         <h2 className="text-xl font-bold text-white font-uncialantiqua">
           No Recent
         </h2>
-        <p className="text-gray-400 text-sm font-uncialantiqua">
+        <p className="text-gray-400 text-sm font-interbold">
           No Recent Basic : Level 1
         </p>
         <div className="w-full bg-gray-700 h-3 rounded-full overflow-hidden">
@@ -29,7 +29,7 @@ export default function ContinueLevel() {
             if (!recentActivity) return;
             navigate("/html-level");
           }}
-          className="w-full bg-yellow-400 text-black font-semibold py-2 rounded-md font-uncialantiqua cursor-pointer hover:scale-105 transition-transform duration-200"
+          className="w-full bg-yellow-400 text-black font-semibold py-2 rounded-md font-inter cursor-pointer hover:scale-105 transition-transform duration-200"
         >
           Tap to continue
         </button>

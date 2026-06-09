@@ -40,7 +40,7 @@ export default function QuestCard() {
 
         <h2 className="text-xl text-white font-uncialantiqua">Daily Quest</h2>
 
-        <p className="text-gray-400 text-base font-uncialantiqua">
+        <p className="text-gray-400 text-base font-poppinsbold">
           New quest available every day. Complete all for a bonus chest!
         </p>
       </div>
@@ -51,7 +51,7 @@ export default function QuestCard() {
           key={q.id}
           disabled={q.done}
           onClick={() => completeDailyQuest(q.id)}
-          className={`w-full flex items-center gap-3 p-3 rounded-xl transition
+          className={`w-full flex items-center cursor-pointer gap-3 p-3 rounded-xl transition
       ${
         q.done
           ? "opacity-60 cursor-not-allowed"
@@ -68,14 +68,14 @@ export default function QuestCard() {
           {/* Text */}
           <div className="flex-1 text-left">
             <p
-              className={`font-medium font-uncialantiqua ${
+              className={`font-poppinssemibold ${
                 q.done ? "line-through text-gray-500" : "text-white"
               }`}
             >
               {q.title}
             </p>
 
-            <p className="text-sm text-gray-400 font-uncialantiqua">
+            <p className="text-sm text-gray-400 font-poppins">
               {q.reward}
             </p>
           </div>
